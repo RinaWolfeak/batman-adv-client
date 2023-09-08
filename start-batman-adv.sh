@@ -9,3 +9,5 @@ batctl gw_mode client
 # Activates batman-adv interfaces
 ifconfig wlan0 up
 ifconfig bat0 up
+
+exec bash
