@@ -24,7 +24,8 @@ ifconfig bat0 mtu 1468
 #batctl gw_mode client
 
 # Activates batman-adv interfaces
-ifconfig wlan0 up
-ifconfig bat0 up
+nsenter -t 1 -m -u -i -n ifconfig wlan0 up
+nsenter -t 1 -m -u -i -n ifconfig bat0 up
+iwconfig wlan0 essid iot-mesh
 
-exec bash
+sleep infinity
