@@ -21,11 +21,10 @@ batctl if add wlan0
 ifconfig bat0 mtu 1468
 
 # Tell batman-adv this is a gateway client
-#batctl gw_mode client
+batctl gw_mode client
 
 # Activates batman-adv interfaces
-nsenter -t 1 -m -u -i -n ifconfig wlan0 up
-nsenter -t 1 -m -u -i -n ifconfig bat0 up
-iwconfig wlan0 essid iot-mesh
+ifconfig wlan0 up
+ifconfig bat0 up
 
 sleep infinity
