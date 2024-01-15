@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:18.04
 RUN apt update -y && apt install -y batctl net-tools wireless-tools
 ADD wlan0 /source/wlan0
 ADD start-batman-adv.sh /start-batman-adv.sh
