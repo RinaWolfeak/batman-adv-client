@@ -29,5 +29,9 @@ nsenter -t 1 -m -u -i -n batctl gw_mode client
 ifconfig wlan0 up
 ifconfig bat0 up
 ifconfig bat0 $BAT_IP
-
+service dnsmasq restart
+service dhcpcd restart
+service networking restart
+ifdown wlan0
+ifup wlan0
 sleep infinity
