@@ -9,6 +9,10 @@ if ! grep -R "denyinterfaces wlan0" /etc/dhcpcd.conf
 then
   echo 'denyinterfaces wlan0' | tee --append /etc/dhcpcd.conf
 fi
+if ! grep -R "leasetime 60" /etc/dhcpcd.conf
+then
+  echo 'leasetime 60' | tee --append /etc/dhcpcd.conf
+fi
 if ! grep -R "wireless-essid" /source/wlan0
 then
 echo "    wireless-essid $MESH_NAME" | tee --append /source/wlan0
